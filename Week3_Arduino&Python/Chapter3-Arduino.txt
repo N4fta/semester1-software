@@ -1,0 +1,29 @@
+int sensorPin = A0;   // select the input pin for the potentiometer
+int ledBLUE = 6;      // select the pin for the LED
+int ledGREEN = 5;      // select the pin for the LED
+int ledRED = 4;      // select the pin for the LED
+int sensorValue = 0;  // variable to store the value coming from the sensor
+int fadeValue = 0;    // variable to store fade value
+void setup() {
+  // declare the ledPin as an OUTPUT:
+  pinMode(ledGREEN, OUTPUT);
+  pinMode(ledBLUE, OUTPUT);
+}
+
+void loop() {
+  // read the value from the sensor then convert to range appropriate to LED:
+  sensorValue = analogRead(sensorPin);
+  fadeValue=map(sensorValue, 0, 1023, 0, 255);
+  
+  // turn the ledGREEN on at certain value:
+  analogWrite(ledGREEN, fadeValue);
+  analogWrite(ledRED, fadeValue);
+  delay(30);
+
+  fadeValue=map(sensorValue, 0, 1023, 255, 0);
+
+  // turn the ledBLUE on at certain value:
+  analogWrite(ledBLUE, fadeValue);
+  delay(30);
+
+}

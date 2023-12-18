@@ -1,0 +1,44 @@
+const int buttonA = 8;  // the number of the pushbutton pin
+const int buttonB = 9;  // the number of the pushbutton pin
+const int ledRED = 4;    // the number of the LED pin
+const int ledGREEN = 5;    // the number of the LED pin
+const int ledBLUE = 6;    // the number of the LED pin
+const int ledYELLOW = 7;    // the number of the LED pin
+
+// variables will change:
+int buttonStateA = 0;  // variable for reading the pushbutton status
+int buttonStateB = 0;  // variable for reading the pushbutton status
+
+void setup() {
+  // initialize the LED pin as an output:
+  pinMode(ledRED, OUTPUT);
+  pinMode(ledGREEN, OUTPUT);
+  pinMode(ledBLUE, OUTPUT);
+  pinMode(ledYELLOW, OUTPUT);
+  // initialize the pushbutton pin as an input:
+  pinMode(buttonA, INPUT_PULLUP);
+  pinMode(buttonB, INPUT_PULLUP);
+}
+
+void loop() {
+  
+  buttonStateA = digitalRead(buttonA);//Button A:
+  buttonStateB = digitalRead(buttonB);//Button B:
+
+  digitalWrite(ledBLUE, LOW);
+  digitalWrite(ledGREEN, LOW);
+  digitalWrite(ledRED, LOW);
+  digitalWrite(ledYELLOW, LOW);
+
+  // check if the pushbutton A is pressed. If it is, the buttonState is LOW:
+  if (buttonStateA == LOW && buttonStateB == LOW) {
+    digitalWrite(ledGREEN, HIGH);
+  } else if (buttonStateA == LOW) {
+    digitalWrite(ledRED, HIGH);
+  } else if (buttonStateB == LOW) {
+    digitalWrite(ledBLUE, HIGH);
+  }else{
+    digitalWrite(ledYELLOW, HIGH);
+  }
+  delay(50);
+}

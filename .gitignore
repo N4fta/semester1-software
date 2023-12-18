@@ -1,0 +1,19 @@
+## VS Code Workspace
+uni-code.code-workspace
+
+## Examples files given by Uni & Non-Code files
+Examples/*
+Documentation&Presentation/*
+*.pptx
+*.slsx
+*.zip
+
+
+## Videos
+*.mp4
+
+## Editing save files
+# Gimp
+*.xcf
+# DaVinci Resolve
+*.drp

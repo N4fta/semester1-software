@@ -1,0 +1,30 @@
+
+<html>
+    <head>
+        <title>Time and Sensor Data</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <meta http-equiv="refresh" content="1">
+    </head>
+    <body>
+        <!--Table of data-->
+        <div class="table">
+            <h2>Telemetry Data</h2>
+            <table>
+                <tr>
+                    <th>Time</th>
+                    <th>Temperature</th>
+                    <th>Humidity</th>
+                    <th>Light level</th>
+                </tr>
+                {% for checkpoint in data %}
+                    <tr>
+                        <td>{{ checkpoint[0] }}</td>
+                        <td>{{ checkpoint[1] }} &#176;C</td>
+                        <td>{{ checkpoint[2] }}% HF</td>
+                        <td>{{ checkpoint[3] }} W/m&sup2;</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>

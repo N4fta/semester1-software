@@ -1,0 +1,41 @@
+
+body{
+    background-color: #34d5d5;
+}
+
+div.table{
+    background-color: aquamarine;
+    border-radius:10px;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    margin: auto;
+    margin-top: 80px;
+    width: 75%;
+    max-width: 850;
+    min-width: 550;
+}
+
+h2 {
+    text-align: center;
+    position: relative;
+    top: 0px;
+    align-self: center;
+    font-size: 26px;
+}
+
+th, td{
+    text-align: center;
+    border-bottom: 2px solid #34d5d5;
+}
+
+table{
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 30px;
+    width: 95%;
+}
+
+th.display{
+    font-size: 70px;
+}

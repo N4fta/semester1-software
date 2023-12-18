@@ -1,0 +1,188 @@
+/*Amatic SC font taken from Google Fonts*/
+/* latin-ext */
+@font-face {
+    font-family: 'Amatic SC';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/amaticsc/v26/TUZyzwprpvBS1izr_vOEBOSfQZQ.woff2) format('woff2');
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Amatic SC';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/amaticsc/v26/TUZyzwprpvBS1izr_vOECuSf.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+/* latin-ext */
+@font-face {
+    font-family: 'Amatic SC';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/amaticsc/v26/TUZ3zwprpvBS1izr_vOMscGKcLUC7WQ.woff2) format('woff2');
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Amatic SC';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/amaticsc/v26/TUZ3zwprpvBS1izr_vOMscGKfrUC.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+
+
+
+
+
+/*Standart Classes*/
+body {
+    background-color:rgb(212, 77, 192);
+    align-content: center;
+    max-width: 1350;
+    padding:0;
+}
+h1,h2,h3{
+    font-family: 'Amatic SC', cursive;
+    text-align: left;
+    font-size: 48px;
+    position: relative;
+    top:15px;
+    left: 10px;
+    margin-left: 16px;
+}
+p{
+    margin-left: 16px;
+    padding: 10px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 36px;
+    text-align: left;
+}
+a {
+    color:rgb(0, 0, 0);
+}
+ul {
+    font-family: 'Amatic SC', cursive;
+    font-size: 36px;
+    text-align: left;
+    list-style-position: inside;
+    padding: 10px;
+}
+ul.a{
+    list-style-type: circle;
+}
+
+
+/*Center Alignment Classes*/
+div.center{
+    margin:auto;
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #a53692;
+    border-style: solid;
+    border-width: 3px;
+    width: 90%;
+    border-radius:15px;
+    max-width: 1400px;
+}
+img.center {
+    display: block;
+    margin: auto;
+    width: 95%;
+    border-radius:19px;
+    padding: 5px;
+    max-width: 1400px;
+  }
+
+
+/*Other Classes*/
+/*Contact page*/
+div.left{
+    margin:auto;
+    margin-top: 45px;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    background-color: #a53692;
+    border-style: solid;
+    border-width: 3px;
+    width: 90%;
+    border-radius:15px;
+    max-width: 1400px;
+}
+
+
+  /*Nav bar classes*/
+  ul.Navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    background-color: #a53692;
+    font-family: 'Amatic SC', cursive;
+    font-size: 28px;
+  }
+  li.Navbar {
+    float: left;
+    border-right: 1px solid #4b1a43;
+  }
+  li.NavbarR {
+    float: right;
+    border-left: 1px solid #4b1a43;
+  }
+  li a.Navbar{
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  li a.Navbar:hover {
+    background-color: #852e77;
+  }
+  li a.active {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    background-color: #7d296f;
+    text-decoration: none;
+  }
+
+
+/*Galleries of side-by-side images in the About page (from W3Schools) */
+.column {
+    box-sizing: border-box;
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+/*end of code from W3Schools*/
+
+
+/*Game Classes*/
+.gamediv {
+    margin:auto;
+    align-content: center;
+    background-image: url(Froggy.png);
+    background-size: cover;
+    width: 90%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    border-radius:15px;
+    max-width: 1400px;
+}

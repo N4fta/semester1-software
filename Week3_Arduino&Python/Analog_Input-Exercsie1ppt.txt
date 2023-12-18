@@ -1,0 +1,65 @@
+const int POTPIN = A0;
+const int LEDRED = 4;
+const int LEDGREEN = 5;
+const int LEDBLUE = 6;
+const int LEDYELLOW = 7;
+int val = 0;
+int memoryOne = 0;
+
+void setup() {
+  pinMode(POTPIN,INPUT);
+  pinMode(LEDYELLOW,OUTPUT);
+  pinMode(LEDBLUE,OUTPUT);
+  pinMode(LEDGREEN,OUTPUT);
+  pinMode(LEDRED,OUTPUT);
+
+}
+
+void loop() {
+  //Read the value of the Potentiometer
+  val = analogRead(POTPIN);
+  //If there is change then the LED that is on will change so we first must turn off all LEDS
+  //
+  //At first the ligths would flicker even when you didn't touch the potentiometer because of
+  //very small changes so I added a mergin. If it doesnt change by more than 5 points then don't
+  //turn of the LEDs
+  if(memoryOne>val+5 || memoryOne<val-5){
+    digitalWrite(LEDYELLOW, LOW);
+    digitalWrite(LEDBLUE, LOW);
+    digitalWrite(LEDGREEN, LOW);
+    digitalWrite(LEDRED, LOW);
+  }
+
+  //Then we choose which LED to turn on
+  if(memoryOne<val-5){
+    digitalWrite(LEDRED, HIGH);     //If the value is decreasing turn on the Red LED
+      delay(100);
+  }
+  else if(memoryOne>val+5){
+    digitalWrite(LEDRED, HIGH);     //If the value is increasing turn on the Red LED
+      delay(100);
+  }
+
+  else{                             //If the value isn't changing aka the potentiometer isn't
+    digitalWrite(LEDRED, LOW);      //being turned then turn on another LED
+    delay(100);                     //First turn off the Red LED
+    if(val<341){
+      digitalWrite(LEDYELLOW, HIGH); //If the value is low turn on Yellow
+      delay(100);
+    }
+    else if (val<682){
+      digitalWrite(LEDBLUE, HIGH);   //If the value is in the middle turn on Blue
+      delay(100);
+    }
+    else{
+      digitalWrite(LEDGREEN, HIGH);  //Else it must be high so turn on Green
+      delay(100);
+    }
+  }
+
+  //This is the critical part of the code.
+  //By saving the value of the previous cycle of the program we can check if it changed from
+  //one cycle to the next.
+  memoryOne=val;        
+
+}
